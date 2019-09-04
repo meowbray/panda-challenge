@@ -1,0 +1,32 @@
+data.count()
+data["SN"].count()
+
+item = len(data["Item Name"].unique())
+avg_price = data["Price"].mean()
+purchases = len(data["Purchase ID"].unique())
+rev = data["Price"].sum()
+
+purchase_analysis = pd.DataFrame({"Unique Items": item,
+                                 "Average Price": [avg_price], 
+                                  "Number of Purchases": purchases,
+                                 "Total Revenue": rev})
+purchase_analysis.head()
+
+g_count = data["Gender"].value_counts()
+
+pcts = data["Gender"].value_counts(normalize=True)
+
+g_demo = pd.DataFrame({"Gender": g_count,
+                              "Percentag of Players": pcts})
+g_demo
+
+raw_data = {
+    'Age': ["Age"],  
+df = pd.DataFrame(raw_data)
+df
+
+bins = [10, 14, 15, 19, 20, 24, 25, 29, 30, 34, 35, 39, 40]
+group_names = [">10", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40+"]
+
+df["Suummary"] = pd.cut(df("Age", bins, labels=group_names)
+Suumary.head()
